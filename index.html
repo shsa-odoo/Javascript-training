@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissor</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./main.css" />
+    </head>
+    <body>
+        <h1>Rock Paper Scissor</h1>
+        <div>
+            <div class="outerDiv">
+                <div class="score">
+                    <h3>Computer</h3>
+                    <div id="compDiv">
+                        <span id="computerChoiceSpan"></span>
+                        <span id="computerChoiceIcon"></span>
+                    </div>
+                </div>
+                <div class="d-flex container">
+                    <div>
+                        Player <span id="humanScore">0</span> :
+                        <span id="computerScore">0</span> Computer
+                        <div class="resultDiv">
+                            Result: <span id="result"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="score">
+                    <h3>Player</h3>
+                    <div id="playerDiv">
+                        <span id="humanChoiceSpan"></span>
+                        <span id="humanChoiceIcon"></span>
+                    </div>
+                </div>
+                <div class="innerDiv">
+                    <button value="Rock" id="rockBtn">Rock</button>
+                    <button value="Paper" id="paperBtn">Paper</button>
+                    <button value="Scissor" id="scissorBtn">Scissor</button>
+                </div>
+            </div>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
