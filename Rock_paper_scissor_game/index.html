@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- outer container -->
+    <div class="outer_container">
+        <!-- container showing the score -->
+        <div class="score_container">
+            <h3>Your Score 
+                <div class="score" id="human"></div>
+            </h3>
+            <h3> Bot score
+                <div class="score" id="bot"></div>
+            </h3>
+            
+        </div>
+        <!-- container showing the status -->
+        <div class="status">
+            <h1 id="status_human"></h1>
+            <h1 id = "status"></h1>
+            <h1 id="status_bot"></h1>
+        </div>
+        <!-- container containing the buttons  -->
+        <div class="buttons_container">
+            <button class="btn" id = "rock">Rock</button>
+            <button class="btn" id = "paper">Paper</button>
+            <button class="btn" id = "scissor">Scissor</button>
+        </div>
+    </div>
+    
+<script src="index.js"></script>
+</body>
+</html>
