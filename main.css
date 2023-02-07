@@ -1,0 +1,78 @@
+body {
+    background-color: #e0e0e0;
+    font-family: "Poppins", sans-serif;
+}
+h1 {
+    text-align: center;
+}
+.outerDiv {
+    background-color: #a4d11f;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#compDiv,
+#playerDiv {
+    width: 100px;
+    height: 130px;
+    border: 2px dashed #507c00;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+#compDiv #computerChoiceIcon i {
+    transform: rotate(180deg);
+}
+#compDiv #computerChoiceIcon .fa-hand-scissors {
+    transform: rotate(-90deg);
+}
+.container {
+    margin-top: 20px;
+    padding: 10px 20px;
+    justify-content: center;
+    background-color: #fcca47;
+}
+.d-flex {
+    display: flex;
+}
+.innerDiv {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.score {
+    text-align: center;
+}
+.resultDiv {
+    text-align: center;
+    margin-top: 10px;
+}
+#resetBtn {
+    position: absolute;
+    top: 100px;
+    right: 250px;
+    background-color: #a4d11f;
+}
+.Human div,
+.Computer div {
+    width: 200px;
+    text-align: center;
+}
+.score h3 {
+    margin-bottom: 0px;
+}
+#playerDiv #humanChoiceIcon .fa-hand-scissors {
+    transform: rotate(90deg);
+}
+button {
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
