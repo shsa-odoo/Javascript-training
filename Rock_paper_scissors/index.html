@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rock,Paper and Scissor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="./main.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <center>
+                <h1>Rock, Paper and Scissor</h1>
+            </center>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="h2" id="print_result">Let's Play</div>
+            </div>
+            <div class="col-sm-6">
+                <h3><center>Result</center></h3>    
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Win</td>
+                            <td>Lose</td>
+                            <td>Tie</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="win">0</td>
+                            <td id="lose">0</td>
+                            <td id="tie">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <center>
+            <input type="button" id="button_rock" value="Rock" onclick="ABC('rock')" />
+            <input type="button" id="button_paper" value="Paper" onclick="ABC('paper')" />
+            <input type="button" id="button_scissor" value="scissor" onclick="ABC('scissor')" />
+        </center>
+    </div>
+</body>
+
+</html>
