@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div class="position-absolute top-50 start-50 translate-middle">
+
+        <h2 class="mt-5 mb-5">Stone Paper Scissor</h2>
+        <div class="mt-5 mb-5">
+            <span><strong>Player: </strong></span><h3 id="demo"></h3><br/>
+            <span><strong>Computer: </strong></span><h3 id="demo2"></h3><br/>
+            <span><strong>Win: </strong></span><h3 id="demo4"></h3><br/>
+            <span><strong>This Game: </strong></span><h3 id="demo3"></h3>
+        </div>
+       
+    
+        <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+            <button type="button" id="myBtn" class="btn btn-outline-dark" onclick="document.getElementById('demo').innerHTML = getRndInteger(1,3)">Stone</button>
+            <button type="button" id="myBtn1" class="btn btn-outline-dark" onclick="document.getElementById('demo').innerHTML = getRndInteger1(1,3)">Paper</button>
+            <button type="button" id="myBtn2" class="btn btn-outline-dark" onclick="document.getElementById('demo').innerHTML = getRndInteger2(1,3)">Scissor</button>
+        </div>
+    
+    </div>
+   
+
+    <script>
+    document.getElementById("myBtn").addEventListener("click", displayDate);
+    document.getElementById("myBtn1").addEventListener("click", displayPaper);
+    document.getElementById("myBtn2").addEventListener("click", displayScissor);
+
+    var pl =0,cmp=0,cnt=0;
+
+    function displayDate() {
+    document.getElementById("demo").innerHTML = "Stone";
+        cnt++;
+    }
+
+    function displayPaper() {
+    document.getElementById("demo").innerHTML = "Paper";
+        cnt++;
+    }
+
+    function displayScissor() {
+    document.getElementById("demo").innerHTML = "Scissor";
+        cnt++;
+    }
+
+    function getRndInteger(min, max) {
+            let n = Math.floor(Math.random() * (max - min + 1) ) + min;
+
+            if(n==1){
+                document.getElementById("demo2").innerHTML = "Stone";
+                document.getElementById("demo3").innerHTML = "Tie";
+            }
+            else if(n==2){
+                document.getElementById("demo2").innerHTML = "Paper";
+                document.getElementById("demo3").innerHTML = "Lost";
+                cmp=cmp+1;
+            }
+            else if(n==3){
+                document.getElementById("demo2").innerHTML = "Scissor";
+                document.getElementById("demo3").innerHTML = "Won";
+                pl=pl+1;
+            }
+
+            document.getElementById("demo4").innerHTML = ` ${pl}:${cmp} `;
+    }
+
+    function getRndInteger1(min, max) {
+            let n = Math.floor(Math.random() * (max - min + 1) ) + min;
+
+            if(n==1){
+                document.getElementById("demo2").innerHTML = "Stone";
+                document.getElementById("demo3").innerHTML = "Won";
+                pl=pl+1;
+            }
+            else if(n==2){
+                document.getElementById("demo2").innerHTML = "Paper";
+                document.getElementById("demo3").innerHTML = "Tie";
+                
+            }
+            else if(n==3){
+                document.getElementById("demo2").innerHTML = "Scissor";
+                document.getElementById("demo3").innerHTML = "Lost";
+                cmp=cmp+1;
+            }
+
+            document.getElementById("demo4").innerHTML = ` ${pl}:${cmp} `;
+    }
+
+    function getRndInteger2(min, max) {
+            let n = Math.floor(Math.random() * (max - min + 1) ) + min;
+
+            if(n==1){
+                document.getElementById("demo2").innerHTML = "Stone";
+                document.getElementById("demo3").innerHTML = "Lost";
+                cmp=cmp+1;
+            }
+            else if(n==2){
+                document.getElementById("demo2").innerHTML = "Paper";
+                document.getElementById("demo3").innerHTML = "Won";
+                pl=pl+1;
+            }
+            else if(n==3){
+                document.getElementById("demo2").innerHTML = "Scissor";
+                document.getElementById("demo3").innerHTML = "Tie";
+            }
+
+            document.getElementById("demo4").innerHTML = ` ${pl}:${cmp} `;
+    }
+    </script>
+</body>
+</html>
