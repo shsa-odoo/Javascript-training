@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th colspan="3">You Vs Computer</th>
+        </tr>
+        <tr>
+            <th>Computer:</th>
+            <td colspan="2"><span id="computer"></span></td>
+        </tr>
+        <tr>
+            <th >Winner:</th>
+            <td colspan="2"><span id="winner"></span></td>
+        </tr>
+        <tr>
+            <th>Score</th>
+            <td colspan="2"><span id="user_score">0</span>:<span id="computer_score">0</span></td>
+        </tr>
+        <tr>
+            <td><button id="btn_rock">Rock</button></td>
+            <td><button id="btn_paper">Paper</button></td>
+            <td><button id="btn_scissor">Scissor</button></td>
+        </tr>
+    </table>
+   
+</body>
+<script src="basics.js"></script>
+<script>
+    let game_options=['rock','paper','scissor']
+    var btn=[];
+    for (let i in game_options){
+        btn.push(document.getElementById("btn_"+game_options[i]))
+    }
+    let user_score_ele=document.getElementById("user_score")
+    let computer_score_ele=document.getElementById("computer_score")
+    let user_score=parseInt(user_score_ele.innerHTML)
+    let computer_score=parseInt(computer_score_ele.innerHTML)
+    let computer=document.getElementById("computer")
+    let computerResponse=()=>Math.floor(Math.random()*3)
+    let findWinner=(user,computer)=>{
+        if (user==computer){
+            return "Draw";
+        }
+        else if(user=="rock" && computer=="paper"){
+            computer_score++
+            return "Computer"
+        }
+        else if(user=="rock"&&computer=="scissor"){
+            user_score++
+            return "User"
+        }
+        else if(user=="paper" && computer=="scissor"){
+            computer_score++
+            return "Computer"
+        }
+        else if(user=="paper"&&computer=="rock"){
+            user_score++
+            return "User"
+        }
+        else if(user=="scissor" && computer=="rock"){
+            computer_score++
+            return "Computer"
+        }
+        else if(user=="scissor"&&computer=="paper"){
+            user_score++
+            return "User"
+        }
+    }
+    for(let ele in btn){ 
+        btn[ele].onclick=()=>{
+            console.log(game_options[ele])
+            let temp_response=computerResponse()
+            document.getElementById("winner").innerHTML=findWinner(game_options[ele],game_options[temp_response])
+            computer.innerHTML=game_options[temp_response]
+            computer_score_ele.innerHTML=computer_score
+            user_score_ele.innerHTML=user_score
+        }
+    }
+</script>
+</html>
