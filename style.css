@@ -1,0 +1,44 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    margin: auto;
+    padding-top: 120px;
+
+
+}
+
+.screen {
+    display: flex;
+}
+
+.buttons , #computer {
+    margin: 2px;
+    flex-basis: 50%;
+    height: 210px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    font-size: 18px;
+    padding: 8px;
+}
+
+button:focus{
+    font-weight: bold;
+}
+
+.me{float: left;}
+
+.comp{float: right;}
