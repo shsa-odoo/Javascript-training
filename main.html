@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>   
+    </head>
+    <body>
+        <div class="container">
+            <div class="screen">
+                <div class="buttons">
+                    <button onclick="game(0)">Rock</button>
+                    <button onclick="game(1)">Paper</button>
+                    <button onclick="game(2)">Scissor</button>
+                </div>
+                <h1 id="computer">Computer</h1>
+            </div>
+            <div>
+                <p class="me">Me: <span id="me_score">0</span></p>
+                <p class="comp">Computer: <span id="computer_score">0</span></p>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            var me =0;
+            var computer=0;
+
+            function game(x) {
+                var list =["Rock","Paper","Scissor"]
+
+                var computer_value= Math.floor(Math.random()*3);
+                document.getElementById('computer').innerHTML=list[computer_value];
+
+                (x == computer_value) ? "" : "" ;
+
+                (x == 0 && computer_value== 1) ? computer++ : "";
+                (x == 0 && computer_value== 2) ? me++ : "";
+
+                (x == 1 && computer_value== 0) ? me++ : "";
+                (x == 1 && computer_value== 2) ? computer++ : "";
+                
+
+                (x == 2 && computer_value== 0) ? computer++ : "";
+                (x == 2 && computer_value== 1) ? me++ : "";
+
+                document.getElementById('me_score').innerHTML=me;
+                document.getElementById('computer_score').innerHTML=computer;
+            }
+        </script>
+
+
+    </body>
+
+</html>
