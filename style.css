@@ -16,10 +16,11 @@
 .inp-text{
     font-size: 20px;
 }
-td {
+
+td{
     border-radius: 5px;
     border: 1px solid #00d7c3;
-  }
+}
 
 input{
     text-align: center;
@@ -31,7 +32,7 @@ input{
     color:#00d7c3
 }
 
-.btn {
+#btn {
     width: 150px;
     height: 50px;
     background-color: transparent;
@@ -41,7 +42,7 @@ input{
     transition: all .15s ease-in-out;
     color: #00d7c3;
   }
-  .btn:hover {
+  #btn:hover {
     box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
     border: 3px solid #00d7c3;
   }
