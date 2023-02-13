@@ -7,7 +7,6 @@ let choices = ["rock", "paper", "scissors"];
 
 window.onload = function() {
     for (let i = 0; i < 3; i++) {
-        // <img id="rock" src="rock.png">
         let choice = document.createElement("img");
         choice.id = choices[i];
         choice.src = choices[i] + ".png";
@@ -25,42 +24,22 @@ function selectChoice() {
     document.getElementById("opponent-choice").src = opponent + ".png";
 
     //check for winner
-    if (you == opponent) {
-        alert('Its a tie')
-    }
-    else {
-        if (you == "rock") {
-            if (opponent == "scissors") {
-                alert('yuppie😀 you got a point')
-                yourScore += 1;
-            }
-            else if (opponent == "paper") {
-                alert('shit😣 opponent got a point')
-                opponentScore += 1;
-            }
-        }
-        else if (you == "scissors") {
-            if (opponent == "paper") {
-                alert('yuppie😀 you got a point')
-                yourScore += 1;
-            }
-            else if (opponent == "rock") {
-                alert('shit😣 opponent got a point')
-                opponentScore += 1;
-            }
-        }
-        else if (you == "paper") {
-            if (opponent == "rock") {
-                alert('yuppie😀 you got a point')
-                yourScore += 1;
-            }
-            else if (opponent == "scissors") {
-                alert('shit😣 opponent got a point')
-                opponentScore += 1;
-            }
-        }
-    }
+    let user_win =  ( (you === "rock") && (opponent === "scissors") ||
+    (you === "paper") && (opponent === "rock") ||
+    (you === "scissors") && (opponent === "paper"))
 
+
+    let computer_win =  ( (opponent === "rock") && (you === "scissors") ||
+    (opponent === "paper") && (you === "rock") ||
+    (opponent === "scissors") && (you === "rock") )
+
+    user_win ? alert('yuppie😀 you got a point') : computer_win ? alert('shit😣 opponent got a point') : alert('Its a tie')
+
+    scoreincrement(user_win,computer_win)
     document.getElementById("your-score").innerText = yourScore;
     document.getElementById("opponent-score").innerText = opponentScore;
+}
+
+const scoreincrement = (user,computer_win)=>{
+    return user ? yourScore += 1 : computer_win ? opponentScore +=1 : ""
 }
