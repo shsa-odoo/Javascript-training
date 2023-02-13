@@ -9,47 +9,39 @@ let player, computer;
 
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    // console.log(btn.textContent);
-
     player = btn.textContent;
+    computer = computerTurn();
     playerChoice.textContent = `Player : ${player}`;
+    computerChoice.textContent = `Computer : ${computer}`;
 
-    computerChoice.textContent = `Computer : ${computerTurn()}`;
-
-    // THIS WILL RETURN THE WINNER OF THE GAME
-    result.textContent = checkWinner(player, computer);
+    checkWinner(player, computer);
   });
 });
 
 function computerTurn() {
   const game = ["ROCK", "PAPER", "SCISSORS"];
   let random = Math.trunc(Math.random() * 3);
-  //   console.log(random);
-  computer = game[random];
-  return computer;
+  return game[random];
 }
 
 function checkWinner(playerChoice, computerChoice) {
-  //   console.log(playerChoice, computerChoice);
-  if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
-    playerScore.textContent = +playerScore.textContent + 1;
-    return `Result : You WIN!!!`;
-  } else if (playerChoice === "ROCK" && computerChoice === "PAPER") {
-    computerScore.textContent = +computerScore.textContent + 1;
-    return `Result : You LOSE!!!`;
-  } else if (playerChoice === "PAPER" && computerChoice === "SCISSORS") {
-    computerScore.textContent = +computerScore.textContent + 1;
-    return `Result : You LOSE!!!`;
-  } else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
-    playerScore.textContent = +playerScore.textContent + 1;
-    return `Result : You WIN!!!`;
-  } else if (playerChoice === "SCISSORS" && computerChoice === "ROCK") {
-    computerScore.textContent = +computerScore.textContent + 1;
-    return `Result : You LOSE!!!`;
-  } else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
-    playerScore.textContent = +playerScore.textContent + 1;
-    return `Result : You WIN!!!`;
-  } else {
-    return `Result : It's DRAW!!!`;
+  if (playerChoice === computerChoice) {
+    result.textContent = "Result : It's DRAW!";
+  } else if (computerChoice === "ROCK") {
+    return playerChoice === "PAPER" ? playerWin() : computerWin();
+  } else if (computerChoice === "PAPER") {
+    return playerChoice === "SCISSORS" ? playerWin() : computerWin();
+  } else if (computerChoice === "SCISSORS") {
+    return playerChoice === "ROCK" ? playerWin() : computerWin();
   }
+}
+
+function playerWin() {
+  playerScore.textContent = +playerScore.textContent + 1;
+  result.textContent = "Result : You WIN!";
+}
+
+function computerWin() {
+  computerScore.textContent = +computerScore.textContent + 1;
+  result.textContent = "Result : You LOSE!";
 }
