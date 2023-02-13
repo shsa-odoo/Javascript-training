@@ -1,0 +1,96 @@
+*,
+*:Before,
+*:After{
+    Padding: 0;
+    Margin: 0;
+    Box-Sizing: Border-Box;
+}
+Body{
+    Height: 100vh;
+    Background: Linear-Gradient(
+        135deg,
+        #1bcaff,
+        #231bff
+    );
+}
+.Container{
+    Width: 45%;
+    Min-Width: 500px;
+    Background-Color: #Ffffff;
+    Padding: 40px 30px;
+    Position: Absolute;
+    Transform: Translate(-50%,-50%);
+    Top: 50%;
+    Left: 50%;
+    Border-Radius: 10px;
+    Box-Shadow: 0 15px 25px Rgba(0,0,0,0.15);
+}
+.Scores{
+    Margin-Bottom: 50px;
+    Text-Align: Right;
+}
+.Details{
+    Margin-Top: 30px;
+    Text-Align: Center;
+}
+.Scores,.Details{
+    Font-Family: 'Poppins',Sans-Serif;
+    Font-Weight: 400;
+    Font-Size: 15px;
+}
+
+#User_choice,
+#Computer_choice{
+    Font-Weight: 400;
+    Margin-Bottom: 10px;
+}
+Span{
+    Font-Weight: 600;
+}
+
+
+
+
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .success {
+    border-color: #04AA6D;
+    color: green;
+  }
+  
+  .success:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+  /* Orange */
+ .warning {
+    border-color: #ff9800;
+    color: orange;
+  }
+  
+  .warning:hover {
+    background: #ff9800;
+    color: white;
+  }
+
+  /* Red */
+    .danger {
+    border-color: #f44336;
+    color: red;
+  }
+  
+  .danger:hover {
+    background: #f44336;
+    color: white;
+  }
+  .center {
+    text-align: center;
+    padding: 10px;
+  }

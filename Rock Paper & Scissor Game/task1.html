@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<Html Lang="En">
+    <Head>
+        <Title>Rock Paper Scissor Game</Title>
+        <!--Stylesheet-->
+        <Link Rel="Stylesheet" Href="task1.css">
+    </Head>
+    <Body>
+        <Div Class="Container">
+            <h1 class="center">Rock Paper & Scissor Game</h1>
+            <Div Class="Scores">
+                <P>Computer : 
+                    <Span Id="computer_score">0</Span>
+                </P>
+                <P>
+                    You :
+                    <span Id="user_scores">0</Span>
+                </P>
+            </Div>
+            <div class="center">
+                <h2 id="status"></h2>
+            </div>
+            <Div Class="center">
+                <Button Onclick="playgame(0)" class="btn danger" id="Rock">Rock</Button>
+                <Button Onclick="playgame(0)" class="btn success" id="Paper">Paper</Button>
+                <Button Onclick="playgame(0)" class="btn warning" id="Scissor">Scissor</Button>
+            </Div>
+        </Div>
+        <!--Script-->
+        <Script Src="task1.js"></Script>
+    </Body>
+</Html>
