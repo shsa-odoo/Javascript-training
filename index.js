@@ -39,7 +39,6 @@ class Table extends Component {
     setup(){
         this.binod = khabri()
     }
-    static props = ["state"]
 }
 
 class Message extends Component{
@@ -100,15 +99,13 @@ class Root extends Component {
     static template = xml`
     <center>
         <div class="container">
-            <Table state="state" />
+            <Table />
             <Message state="state" />
             <Button state="state" />
         </div>
     </center>`;
 
     state = useState({
-        yourChoice:"",
-        compChoice:"",
         message:""
     })
 
